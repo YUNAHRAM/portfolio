@@ -1,0 +1,45 @@
+* {
+}
+html,
+body {
+  height: 100%;
+  background: #fcedda;
+  display: flex;
+  justify-content: cetner;
+  align-items: center;
+}
+.num1svg {
+  fill: none;
+  width: 1000px;
+  stroke-width: 1px;
+}
+.num2svg {
+  fill: none;
+  width: 400px;
+  stroke-width: 1px;
+  transform: rotate(-220deg);
+  transition: delay 3000ms;
+}
+.apath {
+  stroke: rgb(236, 92, 92);
+  stroke-dasharray: 343.5;
+  stroke-dashoffset: 343.5;
+  animation: apath 5000ms forwards;
+}
+@keyframes apath {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.bpath {
+  stroke: rgb(236, 92, 92);
+  stroke-dasharray: 343.5;
+  stroke-dashoffset: 343.5;
+  animation: apath 3000ms forwards;
+}
+@keyframes bpath {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
