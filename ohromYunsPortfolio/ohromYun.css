@@ -1,58 +1,271 @@
-@charset"utf-8";
+@charset "utf-8";
 /* NOTO Sans 노토산스 글꼴 */
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-ul,li{
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    color: #fff;
+a {
+  text-decoration: none;
+  color: #fff;
 }
-img{
-    border: 0;
-    vertical-align: middle;
+img {
+  border: 0;
+  vertical-align: middle;
 }
 html,
 body {
-  font-family:'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
   line-height: 1;
   letter-spacing: 0;
   height: 100%;
-  background: #222;
+  width: 100%;
+  background: rgb(156, 153, 153);
+}
+
+/* 해더 시작  */
+.header {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100px;
+  background: rgb(163, 157, 157);
+  transition: height 0.5s, background 0.5s;
+  border-bottom: 1px solid #fff;
+}
+.header .inner {
+  max-width: 100%;
+  height: 100%;
+  z-index: 9;
+  padding: 0 20px;
+}
+.wrap {
+  position: relative;
+  display: block;
+}
+.inner {
+  position: relative;
+  display: block;
+  max-width: 1240;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+  top: 35px;
+  left: 100px;
+  display: inline-block;
+  width: 65px;
+  height: 40px;
+  background: url(./svg/ohromlogow.svg) no-repeat center;
+  background-size: cover;
+  transition: top 0.5s ease-in, background 0.5s ease-in-out;
+}
+.nav {
+  position: absolute;
+  right: 100px;
+  top: 0;
+  height: 100%;
+}
+.gnb {
   display: flex;
-  justify-content: cetner;
+  height: 100%;
   align-items: center;
 }
 
-
-/* 해더 시작  */
-.wrap{
-    position: relative;
-    display: block;
-}
-.inner{
-    position: relative;
-    display: block;
-    max-width: 1240;
-width: 100%;
-margin: 0 auto;
+.gnb > li > a {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  padding: 40px 38px;
 }
 
+.gnb > li > a > span {
+  position: relative;
+  display: block;
+  padding-bottom: 7px;
+}
+.gnb > li > a > span::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  transition: width 0.5s;
+}
+.gnb > li > a:hover > span::after {
+  width: 100%;
+}
+
+/* 모바일 메뉴 mb-menu */
+.mb-nav {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  padding-top: 90px;
+  transition: left 0.6s ease-out;
+}
+.mb-nav-gnb > li {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mb-nav-gnb > li > a {
+  display: block;
+  padding: 15px 70px 15px 40px;
+  font-size: 24px;
+}
+
+/* 스크롤시 CSS 적용 */
+/* .active 클래스는 js 로 생성할거임 */
+.header.active {
+  height: 80px;
+  background: rgba(255, 255, 255, 1);
+}
+.logo.active {
+  top: 25px;
+  background: url(./svg/ohromlogow.svg) no-repeat center;
+  background-size: cover;
+}
+.logo.active-black {
+  background: url(./svg/ohromlogob.svg) no-repeat center;
+  background-size: cover;
+}
+
+/* 모바일버튼 */
+.mobile-bt {
+  position: absolute;
+  right: -2000px;
+  top: 24px;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.mobile-bt span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+.mobile-bt span:nth-child(1) {
+  transition: transform 0.3s;
+  top: 0;
+}
+.mobile-bt span:nth-child(2) {
+  top: calc(50% - 1px);
+  transition: opacity 0.1s;
+}
+.mobile-bt span:nth-child(3) {
+  bottom: 0;
+  transition: transform 0.3s;
+}
+.gnb > li > a.active {
+  color: #222;
+}
+/* 모바일 버튼 애니메이션 */
+.mobile-bt span.active {
+  background: #222;
+}
+.mobile-bt.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: calc(50% - 1px);
+}
+.mobile-bt.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-bt.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+/* 모바일 메뉴 애니메이션 */
+.mb-nav.active {
+  left: 0;
+}
+/* 웹 > 태블릿 > 모바일 미디어쿼리 resize 적용 */
+@media screen and (max-width: 1280px) {
+  .header {
+    height: 90px;
+  }
+  .logo {
+    top: 30px;
+    left: 20px;
+    width: 150px;
+    height: 30px;
+  }
+  .gnb > li > a {
+    padding: 25px 35px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .header {
+    height: 70px !important;
+  }
+  .logo {
+    top: 20px !important;
+    width: 120px;
+    height: 30px;
+  }
+  .gnb {
+    display: none;
+  }
+  .mobile-bt {
+    right: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+}
+
+/* 비주얼 시작  */
+.visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+.swvisual {
+  width: 100%;
+  height: 100%;
+}
+.visual-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 계단모양 애니메이션 svg  */
 .num1svg {
   fill: none;
-  width: 600px;
+  max-width: 1240px;
+  width: 100%;
+  height: 100%;
   stroke-width: 1px;
 }
 .num2svg {
   fill: none;
   width: 400px;
+  height: 100;
   stroke-width: 1px;
   transform: rotate(-120deg);
   transition: delay 3000ms;
@@ -68,7 +281,6 @@ margin: 0 auto;
     stroke-dashoffset: 0;
   }
 }
-
 .bpath {
   stroke: #fff;
   stroke-dasharray: 243.5;
@@ -79,4 +291,65 @@ margin: 0 auto;
   100% {
     stroke-dashoffset: 0;
   }
+}
+.ohromtxt {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  color: white;
+  line-height: 2;
+}
+.ohromtxt h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.ohromtxt span {
+  font-size: 43px;
+  font-weight: 700;
+}
+
+/* 서비스 시작  */
+.skills {
+  width: 100%;
+
+  background: url('./images/L1180720.JPG') no-repeat fixed;
+  background-size: cover;
+  position: relative;
+  display: block;
+  height: 100vh;
+}
+.skills .inner {
+  height: 100%;
+  padding: 180px 30px;
+}
+.skills h2 {
+  text-align: center;
+  /* 글자 셋팅 */
+}
+.skills h2 span {
+  color: white;
+}
+.skills-svg {
+  z-index: 1;
+
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.skills-svg {
+  width: 100%;
+  height: 100%;
+}
+.skills-svg ul {
+  width: 100%;
+  height: 100%;
+}
+.sk-svg-01 {
+  width: 40px;
+  height: 40px;
+  background: url('./svg/Figma-logo.svg');
+}
+.sk-svg-02 {
 }
