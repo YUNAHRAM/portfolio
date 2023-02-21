@@ -27,7 +27,7 @@ body {
   letter-spacing: 0;
   height: 100%;
   width: 100%;
-  background:#222;
+  background: #222;
 }
 
 /* 해더 시작  */
@@ -223,7 +223,6 @@ body {
   }
   .logo {
     top: 20px !important;
-    
   }
   .gnb {
     display: none;
@@ -254,12 +253,34 @@ body {
 }
 
 /* 계단모양 애니메이션 svg  */
+.num0svg {
+  fill: none;
+  max-width: 1920px;
+  width: 100%;
+  height: 100%;
+  stroke-width: 1px;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 6px;
+}
+
 .num1svg {
   fill: none;
   max-width: 1240px;
   width: 100%;
   height: 100%;
   stroke-width: 1px;
+}
+.zeropath {
+  stroke: #fff;
+  stroke-dasharray: 5642;
+  stroke-dashoffset: 5642;
+  animation: zeropath 5000ms ease forwards;
+}
+@keyframes zeropath {
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 .num2svg {
   fill: none;

@@ -1,4 +1,10 @@
 window.onload = function () {
+  const $logosvg = document.querySelectorAll('.num0svg path');
+
+  for (let i = 0; i < $logosvg.length; i++) {
+    
+    console.log(`svgimg ${i} is ${$logosvg[i].getTotalLength()}`);
+  }
   let mbBt = document.querySelector('.mobile-bt');
   let mbNav = document.querySelector('.mb-nav');
   let logo = document.querySelector('.logo');
@@ -78,8 +84,11 @@ window.onload = function () {
         item.classList.remove('active');
       });
     }
-    if ($scrollTop > 1080) {header.classList.add('active')}
-    else{header.classList.remove('active');}
+    if ($scrollTop > 1080) {
+      header.classList.add('active');
+    } else {
+      header.classList.remove('active');
+    }
   });
 
   //화면 Reload 시 처리
