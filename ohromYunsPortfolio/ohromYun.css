@@ -27,7 +27,7 @@ body {
   letter-spacing: 0;
   height: 100%;
   width: 100%;
-  background: rgb(156, 153, 153);
+  background:#222;
 }
 
 /* 해더 시작  */
@@ -39,7 +39,7 @@ body {
   display: block;
   width: 100%;
   height: 100px;
-  background: rgb(163, 157, 157);
+  background: #222;
   transition: height 0.5s, background 0.5s;
   border-bottom: 1px solid #fff;
 }
@@ -66,7 +66,7 @@ body {
   top: 35px;
   left: 100px;
   display: inline-block;
-  width: 65px;
+  width: 55px;
   height: 40px;
   background: url(./svg/ohromlogow.svg) no-repeat center;
   background-size: cover;
@@ -210,7 +210,7 @@ body {
   .logo {
     top: 30px;
     left: 20px;
-    width: 150px;
+    width: 50px;
     height: 30px;
   }
   .gnb > li > a {
@@ -223,8 +223,7 @@ body {
   }
   .logo {
     top: 20px !important;
-    width: 120px;
-    height: 30px;
+    
   }
   .gnb {
     display: none;

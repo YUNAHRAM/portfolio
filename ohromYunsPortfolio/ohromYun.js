@@ -58,7 +58,7 @@ window.onload = function () {
     // console.log($scrollTop);
     // 조금이라도 스크롤을 했다면 처리한다.
     if ($scrollTop > 100) {
-      header.classList.add('active');
+      // header.classList.add('active');
       logo.classList.add('active');
       mbBtSpan.forEach((item, idx, arr) => {
         item.classList.add('active');
@@ -68,7 +68,7 @@ window.onload = function () {
         item.classList.add('active');
       });
     } else {
-      header.classList.remove('active');
+      // header.classList.remove('active');
       logo.classList.remove('active');
       mbBtSpan.forEach((item, idx, arr) => {
         item.classList.remove('active');
@@ -78,6 +78,8 @@ window.onload = function () {
         item.classList.remove('active');
       });
     }
+    if ($scrollTop > 1080) {header.classList.add('active')}
+    else{header.classList.remove('active');}
   });
 
   //화면 Reload 시 처리
