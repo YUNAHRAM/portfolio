@@ -27,7 +27,7 @@ body {
   letter-spacing: 0;
   height: 100%;
   width: 100%;
-  background: #222;
+  background: white;
 }
 
 /* 해더 시작  */
@@ -235,11 +235,20 @@ body {
 }
 
 /* 비주얼 시작  */
-.visual {
+.visual {background: url("./images/stairs-gcb28b37a7_1920.jpg")no-repeat center;
+  background-size: cover;
   position: relative;
   display: block;
   width: 100%;
   height: 100vh;
+}
+.visual:before{
+  content: "";
+  background: linear-gradient(to to,white,transparent);
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 .swvisual {
   width: 100%;
@@ -257,7 +266,7 @@ body {
   fill: none;
   max-width: 1920px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   stroke-width: 1px;
   stroke: #fff;
   stroke-miterlimit: 10;
@@ -282,14 +291,14 @@ body {
     stroke-dashoffset: 0;
   }
 }
-.num2svg {
+/* .num2svg {
   fill: none;
   width: 400px;
   height: 100;
   stroke-width: 1px;
   transform: rotate(-120deg);
   transition: delay 3000ms;
-}
+} */
 .apath {
   stroke: #fff;
   stroke-dasharray: 343.5;
@@ -301,12 +310,12 @@ body {
     stroke-dashoffset: 0;
   }
 }
-.bpath {
+/* .bpath {
   stroke: #fff;
   stroke-dasharray: 243.5;
   stroke-dashoffset: 243.5;
   animation: bpath 3000ms forwards;
-}
+} */
 @keyframes bpath {
   100% {
     stroke-dashoffset: 0;
@@ -317,17 +326,27 @@ body {
   position: absolute;
   align-items: center;
   justify-content: center;
-  top: 20%;
-  left: 50%;
+  top: 40%;
+  left: 70%;
   color: white;
   line-height: 2;
+  opacity: 1;
+  animation: fadein 6.4s ease-in-out;
+}
+@keyframes fadein {
+  0% {
+   opacity:0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .ohromtxt h2 {
   font-size: 30px;
   font-weight: 500;
 }
 .ohromtxt span {
-  font-size: 43px;
+  font-size: 36px;
   font-weight: 700;
 }
 

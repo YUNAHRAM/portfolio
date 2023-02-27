@@ -8,6 +8,7 @@ window.onload = function () {
   let mbBt = document.querySelector('.mobile-bt');
   let mbNav = document.querySelector('.mb-nav');
   let logo = document.querySelector('.logo');
+  let logoBlack = document.querySelector('.logo.active-black')
   let header = document.querySelector('.header');
   let gnbA = document.querySelectorAll('.gnb>li>a');
   let mbBtSpan = document.querySelectorAll('.mobile-bt span');
@@ -63,19 +64,21 @@ window.onload = function () {
     let $scrollTop = window.document.documentElement.scrollTop;
     // console.log($scrollTop);
     // 조금이라도 스크롤을 했다면 처리한다.
-    if ($scrollTop > 100) {
-      // header.classList.add('active');
+    if ($scrollTop > 1080) {
+      header.classList.add('active');
       logo.classList.add('active');
       mbBtSpan.forEach((item, idx, arr) => {
         item.classList.add('active');
       });
+      
       gnbA.forEach((item, idx, arr) => {
         // console.log(item);
         item.classList.add('active');
       });
     } else {
-      // header.classList.remove('active');
+      header.classList.remove('active');
       logo.classList.remove('active');
+      logo.classList.add('active-black')
       mbBtSpan.forEach((item, idx, arr) => {
         item.classList.remove('active');
       });
@@ -84,11 +87,13 @@ window.onload = function () {
         item.classList.remove('active');
       });
     }
-    if ($scrollTop > 1080) {
-      header.classList.add('active');
-    } else {
-      header.classList.remove('active');
-    }
+    // if ($scrollTop > 1080) {
+    //   header.classList.add('active');
+    //   logoBlack.classList.add('active-black');
+    // } else {
+    //   header.classList.remove('active');
+    //   logoBlack.classList.remove('active-black');
+    // }
   });
 
   //화면 Reload 시 처리
